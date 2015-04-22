@@ -20,7 +20,7 @@ public class GlowAir extends BlockAir {
 		super();
 		setBlockName(Constants.MODID + "_" + name);
 		setBlockTextureName(Constants.MODID + ":" + name);
-		setCreativeTab(CreativeTabs.tabBlock);
+		//setCreativeTab(CreativeTabs.tabBlock);
 		GameRegistry.registerBlock(this, name);
 
 	}
@@ -28,6 +28,5 @@ public class GlowAir extends BlockAir {
 	@Override
 	public void onEntityCollidedWithBlock(World w, int x, int y, int z, Entity e){
 		w.setBlock(x, y, z, Blocks.air);
-		e.stepHeight = 4;
 	}
 }

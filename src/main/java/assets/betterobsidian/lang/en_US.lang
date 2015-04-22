@@ -7,6 +7,8 @@ tile.betterobsidian_compressedCobble.name=Compressed Cobblestone
 tile.betterobsidian_superCompressedCobble.name=Super Compressed Cobblestone
 tile.betterobsidian_ash.name=Ash
 tile.betterobsidian_basalt.name=Basalt
+tile.betterobsidian_geyser.name=Geyser
+tile.betterobsidian_lavaGeyser.name=Lava Geyser
 
 item.betterobsidian_obsidianIngot.name=Obsidian Ingot
 item.betterobsidian_rainbowShard.name=Rainbow Shard
@@ -42,6 +44,6 @@ item.betterobsidian_bedrockHelmet.name=Bedrock Helmet
 item.betterobsidian_bedrockChestplate.name=Bedrock Chestplate
 item.betterobsidian_bedrockLeggings.name=Bedrock Leggings
 item.betterobsidian_bedrockBoots.name=Bedrock Boots
+item.betterobsidian_flameGhastTear.name=Flame Ghast Tear
 
 entity.voidling.name=Voidling
-generator.Better Obsidian=Better Obsidian

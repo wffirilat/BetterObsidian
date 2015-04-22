@@ -11,16 +11,7 @@ public final class ModItems {
 	public static Item rainbowFossil;
 	public static Item voidOrb;
 	public static Item bedrockShard;
-	// public static Item sunShard;
-	// public static Item TEST;
-	// public static Item portableWorkbench;
-	// public static Item teleporter;
-	// public static Item falseEmerald;
-	// public static Item fireSpell;
-	// public static Item healSpell;
-	// public static Item magic;
-	// public static Item bigMagic;
-	// public static Item hugeMagic;
+	public static Item flameGhastTear;
 
 	public static Item obsidianPick;
 	public static Item obsidianAxe;
@@ -51,9 +42,6 @@ public final class ModItems {
 	public static Item bedrockLeggings;
 	public static Item bedrockBoots;
 
-	// public static Item opuntiaSeed;
-	// public static Item beefSandwich;
-
 	public static Item.ToolMaterial ObsidianTool = EnumHelper.addToolMaterial("Obsidian", 4, 8192, 20.0f, 6, 50);
 
 	public static ArmorMaterial ObsidianArmor = EnumHelper.addArmorMaterial("ObsidianArmor", 50, new int[] { 5, 8, 7, 5 }, 50);
@@ -62,12 +50,6 @@ public final class ModItems {
 	public static ArmorMaterial BedrockArmor = EnumHelper.addArmorMaterial("BedrockArmor", 500000, new int[] { 6, 9, 8, 6 }, 0);
 	public static Item.ToolMaterial VoidTool = EnumHelper.addToolMaterial("Void", 4, -1, 50, 10, 0);
 	public static Item.ToolMaterial RainbowTool = EnumHelper.addToolMaterial("Rainbow", 4, 1024, 10.0f, 6, 100);
-	public static Item snowMachine;
-	public static Item flameGhastTear;
-	public static Item mithril;
-	public static Item rawMithril;
-
-	// public static Item rope;
 
 	public static void init() {
 
@@ -76,19 +58,9 @@ public final class ModItems {
 		rainbowFossil = new RainbowFossil();
 		voidOrb = new VoidOrb();
 		bedrockShard = new BedrockShard();
-		rawMithril = new ModItem("rawMithril");
-		mithril = new ModItem("mithril");
 		flameGhastTear = new ModItem("flameGhastTear");
 		ObsidianTool.customCraftingMaterial = ModItems.obsidianIngot;
 		ObsidianArmor.customCraftingMaterial = ModItems.obsidianIngot;
-		// sunShard = new SunShard();
-		// falseEmerald = new FalseEmerald();
-		// fireSpell = new SpellFire();
-		// healSpell = new SpellHeal();
-		// magic = new MagicItem();
-		// bigMagic = new BigMagicItem();
-		// hugeMagic = new HugeMagicItem();
-		// rope = new ModItem("rope");
 
 		obsidianPick = new ToolModPick(ObsidianTool, "obsidianPick");
 		obsidianAxe = new ToolModAxe(ObsidianTool, "obsidianAxe");
@@ -109,9 +81,6 @@ public final class ModItems {
 		voidPick = new ToolVoidPick(VoidTool);
 		voidAxe = new ToolVoidAxe(VoidTool);
 		voidShovel = new ToolVoidShovel(VoidTool);
-		
-
-		snowMachine = new SnowMachine();
 
 		obsidianHelmet = new ArmorObsidian(ObsidianArmor, 0, "obsidianHelmet");
 		obsidianChestplate = new ArmorObsidian(ObsidianArmor, 1, "obsidianChestplate");
@@ -121,13 +90,6 @@ public final class ModItems {
 		bedrockChestplate = new ArmorBedrock(BedrockArmor, 1, "bedrockChestplate");
 		bedrockLeggings = new ArmorBedrock(BedrockArmor, 2, "bedrockLeggings");
 		bedrockBoots = new ArmorBedrock(BedrockArmor, 3, "bedrockBoots");
-
-		// opuntiaSeed = new OpuntiaSeed(4, 1, false);
-		// beefSandwich = new BeefSandwich(14, 1.6f, false);
-
-		// TEST = new TESTITEM();
-		// portableWorkbench = new PortableCraftingTable();
-		// teleporter = new Teleporter();
 
 	}
 }

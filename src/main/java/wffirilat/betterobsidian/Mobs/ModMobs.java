@@ -15,7 +15,6 @@ public class ModMobs {
 	public static void registerEntities() {
 
 		createEntity(Voidling.class, "voidling", 0x000000, 0x000000);
-		createEntity(FlameGhast.class, "flameGhast", 0x150a07, 0x4f271a);
 
 	}
 
@@ -23,10 +22,8 @@ public class ModMobs {
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(entityClass, entityName, randomID);
 		EntityRegistry.registerModEntity(entityClass, entityName, randomID, BetterObsidian.modInstance, 64, 1, true);
-		//EntityRegistry.addSpawn(entityClass, 2, 0, 2, EnumCreatureType.monster, BiomeGenBase.extremeHills, BiomeGenBase.plains, BiomeGenBase.forest, BiomeGenBase.desert, BiomeGenBase.jungle, BiomeGenBase.mesa, BiomeGenBase.swampland, BiomeGenBase.ocean);
-
+		
 		createEgg(randomID, solidColor, spotColor);
-
 	}
 
 	private static void createEgg(int randomID, int solidColor, int spotColor) {

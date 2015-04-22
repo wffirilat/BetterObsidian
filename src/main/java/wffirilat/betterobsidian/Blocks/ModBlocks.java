@@ -1,6 +1,5 @@
 package wffirilat.betterobsidian.Blocks;
 
-import wffirilat.betterobsidian.Items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 
@@ -18,11 +17,6 @@ public final class ModBlocks {
 	public static Block basalt;
 	public static Block geyser;
 	public static Block lavaGeyser;
-	public static Block obsidianChest;
-	public static Block mithrilOre;
-	public static Block netherFurnace;
-	public static Block netherReactor;
-	public static Block glowingObsidian;
 
 	public static void init() {
 		cobblesidian = new Cobblesidian().setHardness(10.0f).setResistance(2000.0f);
@@ -37,10 +31,5 @@ public final class ModBlocks {
 		basalt = new ModBlock("basalt").setHardness(1.5f).setResistance(15.0f);
 		geyser = new BlockGeyser(Blocks.water, "geyser").setHardness(1.5f).setResistance(15.0f);
 		lavaGeyser = new BlockGeyser(Blocks.lava, "lavaGeyser").setHardness(1.5f).setResistance(15.0f);
-		obsidianChest = new ObsidianChest(0);
-		mithrilOre = new MithrilOre().setHardness(5.0f).setResistance(25.0f);
-		netherFurnace = new NetherFurnace();
-		netherReactor = new NetherReactor();
-		glowingObsidian = new ModBlock("glowingObsidian").setLightLevel(1.0f);
 	}
 }

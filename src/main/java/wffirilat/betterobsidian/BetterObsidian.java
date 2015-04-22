@@ -6,13 +6,10 @@ import wffirilat.betterobsidian.Items.ModItems;
 import wffirilat.betterobsidian.Mobs.ModMobs;
 import wffirilat.betterobsidian.events.ModEvents;
 import wffirilat.betterobsidian.events.TerrainEvents;
-import wffirilat.betterobsidian.gen.biome.ModBiomes;
-import wffirilat.betterobsidian.gen.biome.WorldTypeBetterObsidian;
 import wffirilat.betterobsidian.lib.Constants;
 import wffirilat.betterobsidian.lib.ModOreGenerators;
 import wffirilat.betterobsidian.lib.ModRecipies;
 import wffirilat.betterobsidian.proxy.CommonProxy;
-import wffirilat.betterobsidian.tileEntity.ModTileEntities;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -41,9 +38,7 @@ public class BetterObsidian {
 		ModRecipies.init();
 		ModOreGenerators.init();
 		ModMobs.init();
-		ModBiomes.init();
 		ModEvents.init();
-		ModTileEntities.init();
 
 		// DimensionManager.registerProviderType(dimensionId,
 		// WorldProviderVoid.class, false);
@@ -60,6 +55,6 @@ public class BetterObsidian {
 
 	@EventHandler()
 	public void postInit(FMLPostInitializationEvent event) {
-		WorldType VOID = new WorldTypeBetterObsidian(3, "Better Obsidian");
+
 	}
 }
