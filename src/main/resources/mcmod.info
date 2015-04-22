@@ -1,0 +1,17 @@
+[
+{
+  "modid": "betterobsidian",
+  "name": "Better Obsidian",
+  "description": "My First mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["wffirilat"],
+  "credits": "wffirilat",
+  "logoFile": "",
+  "screenshots": [],
+  "requiredMods": [ "extendedWorkbench" ],
+  "dependencies": [ "extendedWorkbench" ]
+}
+]

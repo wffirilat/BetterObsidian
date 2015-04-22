@@ -1,0 +1,47 @@
+tile.betterobsidian_cobblesidian.name=Cobblesidian
+tile.betterobsidian_obsidianBricks.name=Obsidian Bricks
+tile.betterobsidian_bedrockOre.name=Weakened Bedrock
+tile.betterobsidian_fossilRainbow.name=Fossilized Rainbow
+tile.betterobsidian_voidBlock.name=Void Block
+tile.betterobsidian_compressedCobble.name=Compressed Cobblestone
+tile.betterobsidian_superCompressedCobble.name=Super Compressed Cobblestone
+tile.betterobsidian_ash.name=Ash
+tile.betterobsidian_basalt.name=Basalt
+
+item.betterobsidian_obsidianIngot.name=Obsidian Ingot
+item.betterobsidian_rainbowShard.name=Rainbow Shard
+item.betterobsidian_rainbowFossil.name=Rainbow Fossil
+item.betterobsidian_bedrockShard.name=Bedrock Shard
+item.betterobsidian_voidOrb.name=Void Orb
+
+item.betterobsidian_obsidianPick.name=Obsidian Pickaxe
+item.betterobsidian_obsidianAxe.name=Obsidian Axe
+item.betterobsidian_obsidianShovel.name=Obsidian Shovel
+item.betterobsidian_obsidianSword.name=Obsidian Sword
+item.betterobsidian_bedrockSword.name=Bedrock Sword
+item.betterobsidian_bedrockPick.name=Bedrock Pickaxe
+item.betterobsidian_bedrockAxe.name=Bedrock Axe
+item.betterobsidian_bedrockShovel.name=Bedrock Shovel
+item.betterobsidian_sharpBedrockSword.name=Sharp Bedrock Sword
+item.betterobsidian_sharpBedrockPick.name=Sharp Bedrock Pickaxe
+item.betterobsidian_sharpBedrockAxe.name=Sharp Bedrock Axe
+item.betterobsidian_sharpBedrockShovel.name=Sharp Bedrock Shovel
+item.betterobsidian_voidPick.name=Void Pickaxe
+item.betterobsidian_voidAxe.name=Void Axe
+item.betterobsidian_voidShovel.name=Void Shovel
+item.betterobsidian_rainbowPick.name=Rainbow Pickaxe
+item.betterobsidian_rainbowAxe.name=Rainbow Axe
+item.betterobsidian_rainbowShovel.name=Rainbow Shovel
+item.betterobsidian_rainbowSword.name=Rainbow Sword
+
+item.betterobsidian_obsidianHelmet.name=Obsidian Helmet
+item.betterobsidian_obsidianChestplate.name=Obsidian Chestplate
+item.betterobsidian_obsidianLeggings.name=Obsidian Leggings
+item.betterobsidian_obsidianBoots.name=Obsidian Boots
+item.betterobsidian_bedrockHelmet.name=Bedrock Helmet
+item.betterobsidian_bedrockChestplate.name=Bedrock Chestplate
+item.betterobsidian_bedrockLeggings.name=Bedrock Leggings
+item.betterobsidian_bedrockBoots.name=Bedrock Boots
+
+entity.voidling.name=Voidling
+generator.Better Obsidian=Better Obsidian
