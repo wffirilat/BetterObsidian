@@ -1,6 +1,5 @@
 package wffirilat.betterobsidian;
 
-import net.minecraft.world.WorldType;
 import wffirilat.betterobsidian.Blocks.ModBlocks;
 import wffirilat.betterobsidian.Items.ModItems;
 import wffirilat.betterobsidian.Mobs.ModMobs;

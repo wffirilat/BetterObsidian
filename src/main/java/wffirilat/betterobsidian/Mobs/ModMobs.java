@@ -22,7 +22,7 @@ public class ModMobs {
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(entityClass, entityName, randomID);
 		EntityRegistry.registerModEntity(entityClass, entityName, randomID, BetterObsidian.modInstance, 64, 1, true);
-		
+
 		createEgg(randomID, solidColor, spotColor);
 	}
 

@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import wffirilat.betterobsidian.lib.Constants;
@@ -63,6 +64,7 @@ public class ToolVoidAxe extends ItemAxe {
 		return true;
 	}
 
+	@Override
 	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int xPos, int yPos, int zPos, int p_77648_7_, float p_77648_8_, float p_77648_9_, float p_77648_10_) {
 		String h = world.getBlock(xPos, yPos, zPos).getHarvestTool(world.getBlockMetadata(xPos, yPos, zPos));
 		if (!world.isRemote && (h == null || h == "axe")) {
@@ -71,6 +73,11 @@ public class ToolVoidAxe extends ItemAxe {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public void onCreated(ItemStack item, World world, EntityPlayer player) {
+		player.attackEntityFrom(DamageSource.magic, 19);
 	}
 
 }

@@ -32,9 +32,10 @@ public class VoidBlock extends Block {
 	@Override
 	public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
 		entity.attackEntityFrom(DamageSource.magic, 5.0F);
-		
+
 	}
 
+	@Override
 	public boolean onBlockActivated(World w, int x, int y, int z, EntityPlayer p, int par6, float par7, float par8, float par9) {
 		w.playSoundAtEntity(p, "", 1.0f, 1.0f);
 		if (!w.isRemote) {
@@ -42,14 +43,14 @@ public class VoidBlock extends Block {
 			for (int i1 = -3; i1 <= 3; i1++) {
 				for (int j1 = 3; j1 >= -3; j1--) {
 					for (int k1 = -3; k1 <= 3; k1++) {
-						if ((int) y + j1 > 0 || (i1 == 0 && j1 == -1 && k1 == 0)) {
+						if (y + j1 > 0 || i1 == 0 && j1 == -1 && k1 == 0) {
 							if (!p.capabilities.isCreativeMode) {
-								p.inventory.addItemStackToInventory(new ItemStack(Item.getItemFromBlock(w.getBlock((int) x + i1, (int) y + j1, (int) z + k1)), 1, w.getBlockMetadata((int) x + i1, (int) y + j1, (int) z + k1)));
+								p.inventory.addItemStackToInventory(new ItemStack(Item.getItemFromBlock(w.getBlock(x + i1, y + j1, z + k1)), 1, w.getBlockMetadata(x + i1, y + j1, z + k1)));
 							}
-							w.setBlock((int) x + i1, (int) y + j1, (int) z + k1, Blocks.air);
+							w.setBlock(x + i1, y + j1, z + k1, Blocks.air);
 
 						}
-						if ((i1 == 0 && j1 == -1 && k1 == 0)) {
+						if (i1 == 0 && j1 == -1 && k1 == 0) {
 
 						}
 					}
@@ -61,9 +62,10 @@ public class VoidBlock extends Block {
 		return true;
 	}
 
+	@Override
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World w, int x, int y, int z) {
 		float f = 0.0625F;
-		return AxisAlignedBB.getBoundingBox((double) ((float) x + f), (double) ((float) y + f), (double) ((float) z + f), (double) ((float) (x + 1) - f), (double) ((float) (y + 1) - f), (double) ((float) (z + 1) - f));
+		return AxisAlignedBB.getBoundingBox(x + f, y + f, z + f, x + 1 - f, y + 1 - f, z + 1 - f);
 	}
 
 }

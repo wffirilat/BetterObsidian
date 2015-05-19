@@ -17,6 +17,7 @@ public final class ModBlocks {
 	public static Block basalt;
 	public static Block geyser;
 	public static Block lavaGeyser;
+	public static Block gen;
 
 	public static void init() {
 		cobblesidian = new Cobblesidian().setHardness(10.0f).setResistance(2000.0f);
@@ -31,5 +32,6 @@ public final class ModBlocks {
 		basalt = new ModBlock("basalt").setHardness(1.5f).setResistance(15.0f);
 		geyser = new BlockGeyser(Blocks.water, "geyser").setHardness(1.5f).setResistance(15.0f);
 		lavaGeyser = new BlockGeyser(Blocks.lava, "lavaGeyser").setHardness(1.5f).setResistance(15.0f);
+		gen = new GenBlock();
 	}
 }

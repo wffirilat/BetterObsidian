@@ -1,10 +1,10 @@
 package wffirilat.betterobsidian.Mobs;
 
-import wffirilat.betterobsidian.lib.Constants;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderBiped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import wffirilat.betterobsidian.lib.Constants;
 
 public class RenderVoidling extends RenderBiped {
 

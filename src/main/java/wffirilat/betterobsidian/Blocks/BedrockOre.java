@@ -2,15 +2,13 @@ package wffirilat.betterobsidian.Blocks;
 
 import java.util.Random;
 
-import wffirilat.betterobsidian.Items.ModItems;
-import wffirilat.betterobsidian.lib.Constants;
-
-import cpw.mods.fml.common.registry.GameRegistry;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import wffirilat.betterobsidian.Items.ModItems;
+import wffirilat.betterobsidian.lib.Constants;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BedrockOre extends Block {
 
@@ -25,6 +23,7 @@ public class BedrockOre extends Block {
 		GameRegistry.registerBlock(this, name);
 	}
 
+	@Override
 	public Item getItemDropped(int p_149650_1_, Random rand, int fortune) {
 		return ModItems.bedrockShard;
 	}

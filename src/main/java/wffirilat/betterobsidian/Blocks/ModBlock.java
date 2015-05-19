@@ -10,7 +10,7 @@ public class ModBlock extends Block {
 
 	public ModBlock(String name) {
 		this(Material.rock, name);
-		
+
 	}
 
 	public ModBlock(Material mat, String name) {

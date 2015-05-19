@@ -46,18 +46,22 @@ public class Voidling extends EntityMob {
 		getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(100.0D);
 	}
 
+	@Override
 	public boolean isAIEnabled() {
 		return true;
 	}
 
+	@Override
 	protected Item getDropItem() {
 		return ModItems.voidOrb;
 	}
 
+	@Override
 	public boolean getCanSpawnHere() {
 		return super.getCanSpawnHere() && this.posY <= 11;
 	}
 
+	@Override
 	public boolean attackEntityAsMob(Entity e) {
 		int d = this.worldObj.difficultySetting.getDifficultyId();
 		e.attackEntityFrom(DamageSource.magic, d * 5);
