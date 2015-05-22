@@ -10,3 +10,4 @@ $ cat .gitignore
 !gradlew.bat
 !.gitignore
 !/modfiles
+!.gitattributes
