@@ -29,16 +29,16 @@ public class RainbowOreGenerator implements IWorldGenerator {
 	private void generateInEnd(World world, Random random, int x, int z) {
 	}
 
-	private void generateInOverworld(World world, Random random, int x, int z) {
+	private void generateInOverworld(World world, Random random, int chunkX, int chunkZ) {
 		int rarity = 1;
 		int maxHeight = 64;
 		for (int i = 0; i < rarity; i++) {
 
-			int chunkX = x + random.nextInt(16);
-			int chunkY = 256 - random.nextInt(maxHeight);
-			int chunkZ = z + random.nextInt(16);
-			if (random.nextInt(20) == 0) {
-				new WorldGenMinable(ModBlocks.fossilRainbow, 70, Blocks.air).generate(world, random, chunkX, chunkY, chunkZ);
+			int x = chunkX + random.nextInt(16);
+			int y = 256 - random.nextInt(maxHeight);
+			int z = chunkZ + random.nextInt(16);
+			if (random.nextInt(200) == 0) {
+				new WorldGenMinable(ModBlocks.fossilRainbow, 100, Blocks.air).generate(world, random, x, y, z);
 			}
 		}
 	}
