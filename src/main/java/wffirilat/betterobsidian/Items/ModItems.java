@@ -1,95 +1,85 @@
-package wffirilat.betterobsidian.Items;
+package wffirilat.betterobsidian.items;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemModelMesher;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
+import wffirilat.betterobsidian.Constants;
 
-public final class ModItems {
-
+public class ModItems {
+	
 	public static Item obsidianIngot;
-	public static Item rainbowShard;
-	public static Item rainbowFossil;
-	public static Item voidOrb;
-	public static Item bedrockShard;
-	public static Item flameGhastTear;
-
+	
 	public static Item obsidianPick;
+	public static Item obsidianSword;
 	public static Item obsidianAxe;
 	public static Item obsidianShovel;
-	public static Item obsidianSword;
+
 	public static Item bedrockPick;
+	public static Item bedrockSword;
 	public static Item bedrockAxe;
 	public static Item bedrockShovel;
-	public static Item bedrockSword;
-	public static Item sharpBedrockPick;
-	public static Item sharpBedrockAxe;
-	public static Item sharpBedrockShovel;
-	public static Item sharpBedrockSword;
-	public static Item voidPick;
-	public static Item voidAxe;
-	public static Item voidShovel;
-	public static Item rainbowPick;
-	public static Item rainbowAxe;
-	public static Item rainbowShovel;
-	public static Item rainbowSword;
 
 	public static Item obsidianHelmet;
 	public static Item obsidianChestplate;
 	public static Item obsidianLeggings;
 	public static Item obsidianBoots;
-	public static Item bedrockHelmet;
-	public static Item bedrockChestplate;
-	public static Item bedrockLeggings;
-	public static Item bedrockBoots;
-
-	public static Item.ToolMaterial ObsidianTool = EnumHelper.addToolMaterial("Obsidian", 4, 8192, 20.0f, 6, 50);
-
-	public static ArmorMaterial ObsidianArmor = EnumHelper.addArmorMaterial("ObsidianArmor", 50, new int[] { 5, 8, 7, 5 }, 50);
-	public static Item.ToolMaterial BedrockTool = EnumHelper.addToolMaterial("bedrock", 4, -1, 30, 10, 0);
-	public static Item.ToolMaterial SharpBedrockTool = EnumHelper.addToolMaterial("bedrock", 4, -1, 50, 13, 0);
-	public static ArmorMaterial BedrockArmor = EnumHelper.addArmorMaterial("BedrockArmor", 500000, new int[] { 6, 9, 8, 6 }, 0);
-	public static Item.ToolMaterial VoidTool = EnumHelper.addToolMaterial("Void", 4, -1, 50, 10, 0);
-	public static Item.ToolMaterial RainbowTool = EnumHelper.addToolMaterial("Rainbow", 4, 1024, 10.0f, 6, 100);
-
+	
+	public static Item GEN_TEST;
+	
 	public static void init() {
+		
+		ToolMaterial obsidian = EnumHelper.addToolMaterial("obsidian", 4, 8192, 12.0f, 5.0f, 50);
 
+		ToolMaterial bedrock = EnumHelper.addToolMaterial("bedrock", 4, -1, 50, 13, 0);
+
+		ArmorMaterial ObsidianArmor = EnumHelper.addArmorMaterial("ObsidianArmor", "obsidianArmor", 50, new int[] { 5, 8, 7, 5 }, 50);
+		
 		obsidianIngot = new ObsidianIngot();
-		rainbowShard = new RainbowShard();
-		rainbowFossil = new RainbowFossil();
-		voidOrb = new VoidOrb();
-		bedrockShard = new BedrockShard();
-		flameGhastTear = new ModItem("flameGhastTear");
-		ObsidianTool.customCraftingMaterial = ModItems.obsidianIngot;
-		ObsidianArmor.customCraftingMaterial = ModItems.obsidianIngot;
-
-		obsidianPick = new ToolModPick(ObsidianTool, "obsidianPick");
-		obsidianAxe = new ToolModAxe(ObsidianTool, "obsidianAxe");
-		obsidianShovel = new ToolModShovel(ObsidianTool, "obsidianShovel");
-		obsidianSword = new ToolModSword(ObsidianTool, "obsidianSword");
-		bedrockPick = new ToolModPick(BedrockTool, "bedrockPick");
-		bedrockAxe = new ToolModAxe(BedrockTool, "bedrockAxe");
-		bedrockShovel = new ToolModShovel(BedrockTool, "bedrockShovel");
-		bedrockSword = new ToolModSword(BedrockTool, "bedrockSword");
-		sharpBedrockPick = new ToolModPick(SharpBedrockTool, "sharpBedrockPick");
-		sharpBedrockAxe = new ToolModAxe(SharpBedrockTool, "sharpBedrockAxe");
-		sharpBedrockShovel = new ToolModShovel(SharpBedrockTool, "sharpBedrockShovel");
-		sharpBedrockSword = new ToolModSword(SharpBedrockTool, "sharpBedrockSword");
-		rainbowPick = new ToolModPick(RainbowTool, "rainbowPick");
-		rainbowAxe = new ToolModAxe(RainbowTool, "rainbowAxe");
-		rainbowShovel = new ToolModShovel(RainbowTool, "rainbowShovel");
-		rainbowSword = new ToolModSword(RainbowTool, "rainbowSword");
-		voidPick = new ToolVoidPick(VoidTool);
-		voidAxe = new ToolVoidAxe(VoidTool);
-		voidShovel = new ToolVoidShovel(VoidTool);
-
+		
+		obsidianPick = new ToolModPick(obsidian, "obsidianPick");
+		obsidianSword = new ToolModSword(obsidian, "obsidianSword");
+		obsidianAxe = new ToolModAxe(obsidian, "obsidianAxe");
+		obsidianShovel = new ToolModShovel(obsidian, "obsidianShovel");
+		
+		bedrockPick = new ToolModPick(bedrock, "bedrockPick");
+		bedrockSword = new ToolModSword(bedrock, "bedrockSword");
+		bedrockAxe = new ToolModAxe(bedrock, "bedrockAxe");
+		bedrockShovel = new ToolModShovel(bedrock, "bedrockShovel");
+		
 		obsidianHelmet = new ArmorObsidian(ObsidianArmor, 0, "obsidianHelmet");
 		obsidianChestplate = new ArmorObsidian(ObsidianArmor, 1, "obsidianChestplate");
 		obsidianLeggings = new ArmorObsidian(ObsidianArmor, 2, "obsidianLeggings");
 		obsidianBoots = new ArmorObsidian(ObsidianArmor, 3, "obsidianBoots");
-		bedrockHelmet = new ArmorBedrock(BedrockArmor, 0, "bedrockHelmet");
-		bedrockChestplate = new ArmorBedrock(BedrockArmor, 1, "bedrockChestplate");
-		bedrockLeggings = new ArmorBedrock(BedrockArmor, 2, "bedrockLeggings");
-		bedrockBoots = new ArmorBedrock(BedrockArmor, 3, "bedrockBoots");
-
+		
+		GEN_TEST = new GenItem();
 	}
+	
+	public static void registerRenderers() {
+		
+		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
+		ItemModelMesher mesher = renderItem.getItemModelMesher();
+		
+    	mesher.register(obsidianIngot, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ObsidianIngot) obsidianIngot).name, "inventory"));
+    	
+    	mesher.register(obsidianPick, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ToolModPick) obsidianPick).name, "inventory"));
+    	mesher.register(obsidianSword, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ToolModSword) obsidianSword).name, "inventory"));
+    	mesher.register(obsidianAxe, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ToolModAxe) obsidianAxe).name, "inventory"));
+    	mesher.register(obsidianShovel, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ToolModShovel) obsidianShovel).name, "inventory"));
+
+    	mesher.register(bedrockPick, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ToolModPick) bedrockPick).name, "inventory"));
+    	mesher.register(bedrockSword, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ToolModSword) bedrockSword).name, "inventory"));
+    	mesher.register(bedrockAxe, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ToolModAxe) bedrockAxe).name, "inventory"));
+    	mesher.register(bedrockShovel, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ToolModShovel) bedrockShovel).name, "inventory"));   	
+
+    	mesher.register(obsidianHelmet, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ArmorObsidian) obsidianHelmet).name, "inventory"));
+    	mesher.register(obsidianChestplate, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ArmorObsidian) obsidianChestplate).name, "inventory"));
+    	mesher.register(obsidianLeggings, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ArmorObsidian) obsidianLeggings).name, "inventory"));
+    	mesher.register(obsidianBoots, 0, new ModelResourceLocation(Constants.MODID + ":" + ((ArmorObsidian) obsidianBoots).name, "inventory"));
+	}
+
 }

@@ -1,21 +1,21 @@
-package wffirilat.betterobsidian.Items;
+package wffirilat.betterobsidian.items;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import wffirilat.betterobsidian.lib.Constants;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import wffirilat.betterobsidian.Constants;
 
 public class ArmorObsidian extends ItemArmor {
-
-	//private String name = "obsidianHelmet";
+	
+	public String name;
 
 	public ArmorObsidian(ArmorMaterial material, int armorType, String name) {
 
 		super(material, 0, armorType);
 		setUnlocalizedName(Constants.MODID + "_" + name);
-		setTextureName(Constants.MODID + ":" + name);
+		this.name = name;
 		GameRegistry.registerItem(this, name);
 		setCreativeTab(CreativeTabs.tabCombat);
 	}

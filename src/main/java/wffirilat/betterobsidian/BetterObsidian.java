@@ -1,59 +1,33 @@
 package wffirilat.betterobsidian;
 
-import wffirilat.betterobsidian.Blocks.ModBlocks;
-import wffirilat.betterobsidian.Items.ModItems;
-import wffirilat.betterobsidian.Mobs.ModMobs;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import wffirilat.betterobsidian.blocks.ModBlocks;
 import wffirilat.betterobsidian.events.ModEvents;
-import wffirilat.betterobsidian.events.TerrainEvents;
-import wffirilat.betterobsidian.lib.Constants;
-import wffirilat.betterobsidian.lib.ModOreGenerators;
-import wffirilat.betterobsidian.lib.ModRecipies;
-import wffirilat.betterobsidian.proxy.CommonProxy;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import wffirilat.betterobsidian.items.ModItems;
+import wffirilat.betterobsidian.items.recipes.ModRecipes;
 
-@Mod(modid = Constants.MODID, name = Constants.MODNAME, version = Constants.VERSION)
+
+@Mod(modid = "betterobsidian")
 public class BetterObsidian {
-
-	@Instance(Constants.MODID)
-	public static BetterObsidian modInstance;
-
-	public static final int dimensionId = 8;
-
-	public static TerrainEvents terrainEvents = new TerrainEvents();
-
-	@SidedProxy(clientSide = "wffirilat.betterobsidian.proxy.ClientProxy", serverSide = "wffirilat.betterobsidian.proxy.CommonProxy")
-	public static CommonProxy proxy;
-
-	@EventHandler()
-	public void preInit(FMLPreInitializationEvent event) {
-		ModBlocks.init();
-		ModItems.init();
-		ModRecipies.init();
-		ModOreGenerators.init();
-		ModMobs.init();
-		ModEvents.init();
-
-		// DimensionManager.registerProviderType(dimensionId,
-		// WorldProviderVoid.class, false);
-		// DimensionManager.registerDimension(dimensionId, dimensionId);
-
-		proxy.registerRenderers();
-
-	}
-
-	@EventHandler()
+	
+    @EventHandler
+    public void preinit(FMLPreInitializationEvent event) {
+    	ModItems.init();
+    	ModBlocks.init();
+    	ModEvents.init();
+    	ModRecipes.init();
+    }
+    
+    @EventHandler
 	public void init(FMLInitializationEvent event) {
-
+    	if(event.getSide() == Side.CLIENT) {
+    		ModItems.registerRenderers();
+    		ModBlocks.registerRenderers();
+    	}
 	}
 
-	@EventHandler()
-	public void postInit(FMLPostInitializationEvent event) {
-
-	}
 }

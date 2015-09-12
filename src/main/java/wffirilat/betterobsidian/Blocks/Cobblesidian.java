@@ -1,22 +1,19 @@
-package wffirilat.betterobsidian.Blocks;
+package wffirilat.betterobsidian.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import wffirilat.betterobsidian.lib.Constants;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import wffirilat.betterobsidian.Constants;
 
 public class Cobblesidian extends Block {
-
 	public String name = "cobblesidian";
 
 	public Cobblesidian() {
-
 		super(Material.rock);
-		setBlockName(Constants.MODID + "_" + name);
-		setBlockTextureName(Constants.MODID + ":" + name);
-		setCreativeTab(CreativeTabs.tabBlock);
 		GameRegistry.registerBlock(this, name);
-
+		setUnlocalizedName(Constants.MODID + "_" + name);
+		setCreativeTab(CreativeTabs.tabBlock);
+		setHarvestLevel("pickaxe", 2);
 	}
 }
